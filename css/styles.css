@@ -75,7 +75,7 @@ body {
 
 .container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: -1px auto;
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -283,7 +283,6 @@ body {
 .button-main:focus {
   background-color: #188ce8;
 }
-
 
 /* ***********************************ПЕРЕВАГИ************************************** */
 
@@ -589,7 +588,6 @@ span.logo-footer-accent {
   display: block;
 }
 
-
 .address-item {
   color: rgba(255, 255, 255, 0.6);
   display: block;
@@ -622,7 +620,6 @@ span.logo-footer-accent {
   text-transform: uppercase;
   color: var(--primary-white-color);
 }
-
 
 .footer-list-link {
   display: flex;
