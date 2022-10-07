@@ -64,7 +64,9 @@
     <main>
       <section class="main main-bg">
         <h1 class="title">Ефективні рішення для вашого бізнесу</h1>
-        <button class="button-main" type="button">Замовити послугу</button>
+        <button class="button-main" type="button" data-modal-open>
+          Замовити послугу
+        </button>
       </section>
       <section class="features">
         <div class="container">
@@ -125,28 +127,37 @@
           <h2 class="title-works-head link">Чим ми займаємося</h2>
           <ul class="title-works-list list">
             <li class="title-works-item link">
-              <img
-                src="./images/write-img.jpg"
-                alt="написання"
-                width="370"
-                height="294"
-              />
+              <div class="title-works-container">
+                <img
+                  src="./images/write-img.jpg"
+                  alt="написання"
+                  width="370"
+                  height="294"
+                />
+                <p class="title-works-text">Десктопні додатки</p>
+              </div>
             </li>
             <li class="title-works-item link">
-              <img
-                src="./images/mobile-img.jpg"
-                alt="мобільний"
-                width="370"
-                height="294"
-              />
+              <div class="title-works-container">
+                <img
+                  src="./images/mobile-img.jpg"
+                  alt="мобільний"
+                  width="370"
+                  height="294"
+                />
+                <p class="title-works-text">Мобільні додатки</p>
+              </div>
             </li>
             <li class="title-works-item link">
-              <img
-                src="./images/draw-img.jpg"
-                alt="малювання"
-                width="370"
-                height="294"
-              />
+              <div class="title-works-container">
+                <img
+                  src="./images/draw-img.jpg"
+                  alt="малювання"
+                  width="370"
+                  height="294"
+                />
+                <p class="title-works-text">Дизайнерські рішення</p>
+              </div>
             </li>
           </ul>
         </div>
@@ -464,5 +475,16 @@
         </div>
       </div>
     </footer>
+
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button type="button" class="modal-btn" data-modal-close>
+          <svg class="modal-close-icon" width="18" height="18">
+            <use href="./images/symbol-defs.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
