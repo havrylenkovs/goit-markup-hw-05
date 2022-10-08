@@ -7,7 +7,7 @@
   --secondary-text-color: #212121;
   --background-head-color: #f5f4fa;
   --container-border-color: #eeeeee;
-  --transition: 250ms;
+  --transition-duration: 250ms;
   --cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -207,7 +207,7 @@ body {
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color, var(--transition-duration) var(--cubic-bezier);
 }
 
 /* *********************************MAIN**************************/
@@ -276,12 +276,37 @@ body {
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--transition-duration) var(--cubic-bezier);
 }
 
 .button-main:hover,
 .button-main:focus {
   background-color: #188ce8;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+
+  background-color: var(--third-decor-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon-close {
+  fill: currentColor;
+}
+
+.close-btn:hover {
+  color: var(--main-decor-color);
 }
 
 /* ***********************************ПЕРЕВАГИ************************************** */
@@ -408,18 +433,14 @@ body {
 
   color: #AFB1B8;
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-  color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--transition-duration) var(--cubic-bezier), color var(--transition-duration) var(--cubic-bezier);
+
 }
 
 .icon-title-link:hover,
 .icon-title-link:focus {
   background-color:  var(--accent-color);
-}
-
-.icon-title-link:hover .icon-title-comand,
-.icon-title-link:focus .icon-title-comand {
-  fill:#FFFFFF;
+  color: var(--primary-white-color);
 }
 
 .icon-title-comand {
@@ -479,10 +500,11 @@ body {
   font-size: 16px;
   line-height: 1.19;
   letter-spacing: 0.03em;
-  padding-bottom: 16px;
+  margin-bottom: 16px;
+
 }
 
-/* *****************************************************CLIENTS***************************** */
+/******************************************************CLIENTS******************************/
 
 .clients {
   padding-top: 94px;
@@ -519,18 +541,13 @@ body {
   align-items: center;
   color: #AFB1B8;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-  border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-duration) var(--cubic-bezier), border-color var(--transition-duration) var(--cubic-bezier);
 }
 
 .icon-title-clients:hover,
 .icon-title-clients:focus {
   border-color: var(--accent-color);
-}
-
-.icon-title-clients:hover .icon-title-logo,
-.icon-title-clients:focus .icon-title-logo {
-  fill: var(--accent-color);
+  color: var(--accent-color);
 }
 
 .icon-title-logo {
@@ -542,7 +559,7 @@ body {
   gap: 30px;
 }
 
-/* *********************************FOOTER!**************************/
+/**********************************FOOTER!**************************/
 
 .footer {
   background-color: #2f303a;
@@ -641,17 +658,13 @@ span.logo-footer-accent {
   background: rgba(255, 255, 255, 0.1);
   color: var(--primary-white-color);
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--transition-duration) var(--cubic-bezier);
+
 }
 
 .icon-footer-link:hover,
 .icon-footer-link:focus {
   background-color:  var(--accent-color);
-}
-
-.icon-footer-link:hover .icon-title-footer,
-.icon-footer-link:focus .icon-title-footer {
-  fill:var(--primary-white-color);
 }
 
 .icon-title-footer {
@@ -687,7 +700,7 @@ span.logo-footer-accent {
 .project-link {
   display: block;
   position: relative;
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow var(--transition-duration) var(--cubic-bezier);
 }
 
 .project-link:hover,
@@ -722,10 +735,8 @@ span.logo-footer-accent {
   text-decoration: none;
   border-color: transparent;
   border-radius: 4px;
-}
 
-.header-button-portfolio {
-  padding: 6px 25px;
+  transition: background-color var(--transition-duration) var(--cubic-bezier), box-shadow var(--transition-duration) var(--cubic-bezier);
 }
 
 .buttons-portfolio-item:hover,
@@ -771,7 +782,7 @@ span.logo-footer-accent {
   padding: 63px 24px;
   height: 100%;
   transform: translateY(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--transition-duration) var(--cubic-bezier);
   overflow: auto;
 }
 /* ****************************************MODAL*********************************************** */
@@ -809,19 +820,29 @@ span.logo-footer-accent {
 }
 
 .modal-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
   width: 30px;
   height: 30px;
-  border: 1px solid #909090;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  background-color: transparent;
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 0;
+
+  background-color: var(--background-head-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
+}
+
+.modal-close-icon {
+  fill: currentColor;
+}
+
+.modal-btn:hover {
+  color: var(--accent-color);
 }
 
 .is-hidden {
