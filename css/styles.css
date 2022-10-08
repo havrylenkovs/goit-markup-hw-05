@@ -284,31 +284,6 @@ body {
   background-color: #188ce8;
 }
 
-.close-btn {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-
-  width: 30px;
-  height: 30px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-
-  background-color: var(--third-decor-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.icon-close {
-  fill: currentColor;
-}
-
-.close-btn:hover {
-  color: var(--main-decor-color);
-}
-
 /* ***********************************ПЕРЕВАГИ************************************** */
 
 .features {
